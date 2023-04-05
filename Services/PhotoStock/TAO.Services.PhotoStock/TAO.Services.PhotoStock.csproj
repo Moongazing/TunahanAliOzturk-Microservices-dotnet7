@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\..\Shared\TAO.Shared\TAO.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\photos\" />
+  </ItemGroup>
+
 </Project>
