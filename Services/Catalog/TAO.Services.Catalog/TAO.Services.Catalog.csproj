@@ -17,4 +17,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\TAO.Shared\TAO.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
