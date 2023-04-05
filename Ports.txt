@@ -1,2 +1,7 @@
 Services 
 		Catalog API => https://localhost:5011
+		PhotoStock API => https://localhost:5012
+
+
+Identity Server
+
