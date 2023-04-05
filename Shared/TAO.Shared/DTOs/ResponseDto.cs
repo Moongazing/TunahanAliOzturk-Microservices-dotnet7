@@ -45,11 +45,12 @@ namespace TAO.Shared.DTOs
         }
         public static ResponseDto<T> Fail(string error, int statusCode)
         {
-           return new ResponseDto<T>
-           {
-               Errors = new List<string>() { error },
-               StatusCode = statusCode,
-               IsSuccessful = false
+            return new ResponseDto<T>
+            {
+                Errors = new List<string>() { error },
+                StatusCode = statusCode,
+                IsSuccessful = false
+            };
         }
 
 
