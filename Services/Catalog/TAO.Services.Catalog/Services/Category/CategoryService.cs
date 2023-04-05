@@ -29,7 +29,7 @@ namespace TAO.Services.Catalog.Services
         {
             var newCategory = _mapper.Map<Category>(categoryCreateDto);
             await _categoryCollection.InsertOneAsync(newCategory);
-            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(newCategory), 204);
+            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(newCategory), 200);
         }
         public async Task<Response<NoContent>> UpdateAsync(CategoryUpdateDto categoryUpdateDto)
         {
@@ -39,7 +39,7 @@ namespace TAO.Services.Catalog.Services
             {
                 return Response<NoContent>.Fail("Category not found.", 404);
             }
-            return Response<NoContent>.Success(204);
+            return Response<NoContent>.Success(200);
         }
         public async Task<Response<CategoryDto>> GetByIdAsync(string categoryId)
         {
@@ -56,7 +56,7 @@ namespace TAO.Services.Catalog.Services
             var result = await _categoryCollection.DeleteOneAsync(x => x.Id == categoryId);
             if (result.DeletedCount > 0)
             {
-                return Response<NoContent>.Success(204);
+                return Response<NoContent>.Success(200);
             }
             else
             {

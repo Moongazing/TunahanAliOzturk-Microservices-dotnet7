@@ -42,7 +42,7 @@ namespace TAO.Services.Catalog.Services
         {
             var newCourse = _mapper.Map<Course>(courseCreateDto);
             await _courseCollection.InsertOneAsync(newCourse);
-            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse), 204);
+            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse), 200);
         }
         public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
         {
@@ -52,7 +52,7 @@ namespace TAO.Services.Catalog.Services
             {
                 return Response<NoContent>.Fail("Course not found.", 404);
             }
-            return Response<NoContent>.Success(204);
+            return Response<NoContent>.Success(200);
         }
         public async Task<Response<CourseDto>> GetByIdAsync(string courseId)
         {
@@ -69,7 +69,7 @@ namespace TAO.Services.Catalog.Services
             var result = await _courseCollection.DeleteOneAsync(x => x.Id == courseId);
             if (result.DeletedCount > 0 )
             {
-                return Response<NoContent>.Success(204);
+                return Response<NoContent>.Success(200);
             }
             else
             {
