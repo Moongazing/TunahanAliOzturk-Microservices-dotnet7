@@ -9,6 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{931B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAO.Course.Services.Catalog", "Services\Catalog\TAO.Course.Services.Catalog\TAO.Course.Services.Catalog.csproj", "{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA262A80-C01D-489E-8C55-2D98AB880813}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
