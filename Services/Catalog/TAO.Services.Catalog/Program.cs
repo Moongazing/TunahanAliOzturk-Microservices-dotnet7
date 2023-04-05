@@ -1,10 +1,11 @@
 using Microsoft.Extensions.Options;
 using TAO.Services.Catalog.Configurations;
+using TAO.Services.Catalog.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddControllers();
 
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
