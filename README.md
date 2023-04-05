@@ -7,6 +7,6 @@ Project Design
 
 
 Catalog API
-PS:Using MongoDb as container
+
 ![image](https://user-images.githubusercontent.com/72943708/230176560-9acf58fd-f15e-45db-ad5e-8f4e140c7ecc.png)
 
