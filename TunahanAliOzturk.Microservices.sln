@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{71128429-705F-43D9-BEDA-95F4682637CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{931B3182-4CC8-403A-9718-E5E627C73B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAO.Course.Services.Catalog", "Services\Catalog\TAO.Course.Services.Catalog\TAO.Course.Services.Catalog.csproj", "{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{931B3182-4CC8-403A-9718-E5E627C73B0D} = {71128429-705F-43D9-BEDA-95F4682637CD}
+		{28BDA0F7-39BB-4C91-9BA5-5058AECEBFBA} = {931B3182-4CC8-403A-9718-E5E627C73B0D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C0B57C4-074E-44BE-8372-B3C6D11F4BF3}
+	EndGlobalSection
+EndGlobal
