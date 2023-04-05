@@ -1,4 +1,4 @@
-﻿
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TAO.Services.PhotoStock.DTOs;
 using TAO.Shared.BaseController;
@@ -25,8 +25,8 @@ namespace TAO.Services.PhotoStock.Controllers
                 {
                     Url = returnPath
                 };
-                return CreateActionResultInstance(Response<PhotoDto>.Success(photoDto,200));
-                
+                return CreateActionResultInstance(Response<PhotoDto>.Success(photoDto, 200));
+
             }
             return CreateActionResultInstance(Response<PhotoDto>.Fail("Photo is empty.", 400));
         }
@@ -36,10 +36,11 @@ namespace TAO.Services.PhotoStock.Controllers
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoUrl);
             if (!System.IO.File.Exists(path))
             {
-                return CreateActionResultInstance(Response<NoContent>.Fail("Photo not found.", 404));   
+                return CreateActionResultInstance(Response<NoContent>.Fail("Photo not found.", 404));
             }
             System.IO.File.Delete(path);
             return CreateActionResultInstance(Response<NoContent>.Success(204));
         }
     }
 }
+

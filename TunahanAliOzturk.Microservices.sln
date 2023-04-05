@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAO.Shared", "Shared\TAO.Sh
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{3AD76D53-2ADC-4CC1-B535-DFC9941AD4D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAO.Services.PhotoStock", "Services\PhotoStock\TAO.Services.PhotoStock\TAO.Services.PhotoStock.csproj", "{BDF3C83A-466B-4F39-82C0-F93D8246DFDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{0AFB22C7-3D4B-4994-8464-27AF64010492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AFB22C7-3D4B-4994-8464-27AF64010492}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AFB22C7-3D4B-4994-8464-27AF64010492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF3C83A-466B-4F39-82C0-F93D8246DFDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF3C83A-466B-4F39-82C0-F93D8246DFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF3C83A-466B-4F39-82C0-F93D8246DFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF3C83A-466B-4F39-82C0-F93D8246DFDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{E27E5527-CAD4-4546-AED4-C31938D07FFB} = {931B3182-4CC8-403A-9718-E5E627C73B0D}
 		{0AFB22C7-3D4B-4994-8464-27AF64010492} = {E278BB2F-8376-4EEF-BCAA-100D0B894B47}
 		{3AD76D53-2ADC-4CC1-B535-DFC9941AD4D1} = {71128429-705F-43D9-BEDA-95F4682637CD}
+		{BDF3C83A-466B-4F39-82C0-F93D8246DFDC} = {3AD76D53-2ADC-4CC1-B535-DFC9941AD4D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C0B57C4-074E-44BE-8372-B3C6D11F4BF3}
