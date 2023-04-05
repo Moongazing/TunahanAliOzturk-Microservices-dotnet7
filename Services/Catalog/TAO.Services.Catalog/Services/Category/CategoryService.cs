@@ -51,7 +51,19 @@ namespace TAO.Services.Catalog.Services
             return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
 
         }
-        
-        
+        public async Task<Response<NoContent>> DeleteAsync(string categoryId)
+        {
+            var result = await _categoryCollection.DeleteOneAsync(x => x.Id == categoryId);
+            if (result.DeletedCount > 0)
+            {
+                return Response<NoContent>.Success(204);
+            }
+            else
+            {
+                return Response<NoContent>.Fail("Category not found.", 404);
+            }
+        }
+
+
     }
 }

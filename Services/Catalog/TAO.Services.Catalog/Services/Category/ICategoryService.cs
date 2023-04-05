@@ -10,5 +10,6 @@ namespace TAO.Services.Catalog.Services
         Task<Response<CategoryDto>> CreateAsync(CategoryCreateDto categoryCreateDto);
         Task<Response<NoContent>> UpdateAsync(CategoryUpdateDto categoryUpdateDto);
         Task<Response<CategoryDto>> GetByIdAsync(string categoryId);
+        Task<Response<NoContent>> DeleteAsync(string categoryId);
     }
 }

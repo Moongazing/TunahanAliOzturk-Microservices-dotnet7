@@ -9,5 +9,7 @@ namespace TAO.Services.Catalog.Services
         Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto);
         Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto);
         Task<Response<CourseDto>> GetByIdAsync(string courseId);
+        Task<Response<NoContent>> DeleteAsync(string courseId);
+        Task<Response<List<CourseDto>>> GetAllByUserIdAsync(string userId);
     }
 }

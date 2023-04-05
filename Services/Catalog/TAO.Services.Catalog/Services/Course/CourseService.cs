@@ -11,18 +11,31 @@ namespace TAO.Services.Catalog.Services
     public class CourseService:ICourseService
     {
         private readonly IMongoCollection<Course> _courseCollection;
+        private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;
         public CourseService(IMapper mapper, IDatabaseSettings databaseSettings)
         {
             var client = new MongoClient(databaseSettings.ConnectionString);
             var database = client.GetDatabase(databaseSettings.DatabaseName);
 
-            _courseCollection = database.GetCollection<Course>(databaseSettings.CategoryCollectionName);
+            _courseCollection = database.GetCollection<Course>(databaseSettings.CourseCollectionName);
+            _categoryCollection = database.GetCollection<Category>(databaseSettings.CategoryCollectionName);
             _mapper = mapper;
         }
         public async Task<Response<List<CourseDto>>> GetAllAsync()
         {
             var courses = await _courseCollection.Find(courses => true).ToListAsync();
+            if (courses.Any())
+            {
+                foreach (var course in courses)
+                {
+                    course.Category = await _categoryCollection.Find(x=>x.Id == course.CategoryId).FirstAsync();
+                }
+            }
+            else
+            {
+                courses = new List<Course>();
+            }
             return Response<List<CourseDto>>.Success(_mapper.Map<List<CourseDto>>(courses), 200);
         }
         public async Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto)
@@ -50,6 +63,34 @@ namespace TAO.Services.Catalog.Services
             }
             return Response<CourseDto>.Success(_mapper.Map<CourseDto>(course), 200);
 
+        }
+        public async Task<Response<NoContent>> DeleteAsync(string courseId)
+        {
+            var result = await _courseCollection.DeleteOneAsync(x => x.Id == courseId);
+            if (result.DeletedCount > 0 )
+            {
+                return Response<NoContent>.Success(204);
+            }
+            else
+            {
+                return Response<NoContent>.Fail("Course not found.",404);
+            }
+        }
+        public async Task<Response<List<CourseDto>>> GetAllByUserIdAsync(string userId)
+        {
+            var courses = await _courseCollection.Find<Course>(x=>x.UserId == userId).ToListAsync();
+            if (courses.Any())
+            {
+                foreach (var course in courses)
+                {
+                    course.Category = await _categoryCollection.Find(x => x.Id == course.CategoryId).FirstAsync();
+                }
+            }
+            else
+            {
+                courses = new List<Course>();
+            }
+            return Response<List<CourseDto>>.Success(_mapper.Map<List<CourseDto>>(courses), 200);
         }
     }
 }
