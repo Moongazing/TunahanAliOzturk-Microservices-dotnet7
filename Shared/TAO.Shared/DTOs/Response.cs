@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace TAO.Shared.DTOs
 {
@@ -16,12 +14,12 @@ namespace TAO.Shared.DTOs
         public bool IsSuccessful { get; private set; }
         public List<string> Errors { get; set; }
 
-        public static Response<T>  Success(T data, int statusCode)
+        public static Response<T> Success(T data, int statusCode)
         {
-            return new Response<T> 
-            { 
-                Data = data, 
-                StatusCode = statusCode ,
+            return new Response<T>
+            {
+                Data = data,
+                StatusCode = statusCode,
                 IsSuccessful = true
             };
         }
@@ -52,7 +50,5 @@ namespace TAO.Shared.DTOs
                 IsSuccessful = false
             };
         }
-
-
     }
 }
