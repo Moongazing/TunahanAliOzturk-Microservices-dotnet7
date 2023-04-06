@@ -1,4 +1,6 @@
 ﻿
+using IdentityServer4.Hosting.LocalApiAuthentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -6,10 +8,12 @@ using System.Threading.Tasks;
 using TAO.IdentityServer.DTOs;
 using TAO.IdentityServer.Models;
 using TAO.Shared.DTOs;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace TAO.IdentityServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize(LocalApi.PolicyName)]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
