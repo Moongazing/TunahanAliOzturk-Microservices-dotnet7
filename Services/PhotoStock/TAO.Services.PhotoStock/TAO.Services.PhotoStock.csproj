@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\TAO.Shared\TAO.Shared.csproj" />
+    <Folder Include="wwwroot\photos\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\photos\" />
+    <ProjectReference Include="..\..\..\Shared\TAO.Shared\TAO.Shared.csproj" />
   </ItemGroup>
 
 </Project>
